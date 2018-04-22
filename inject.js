@@ -5,7 +5,12 @@ $(document).ready(function() {
     console.log(rButton.id);
   });
   $('span.ui-icon.ui-icon-triangle-1-s').mousedown(function(){
+    console.log('span click');
     var arrow = $(this).parent().prev().first();
     console.log(arrow);
   });
+  $('span').mousedown(function(){
+    console.log(this);
+    console.log($(this));
+    });
 });
