@@ -3,6 +3,11 @@ $(document).ready(function() {
   $('div.ui-radiobutton span').mousedown(function(){
     var rButton = $(this).parents('div.ui-radiobutton').get(0);
     console.log(rButton.id);
+    if(rButton) {
+      console.log('NO ID');
+      var someID = rButton.parents('#id').get(0).id;
+      console.log('someID '+someID);
+    }
   });
   $('span.ui-icon-triangle-1-s').mousedown(function(){
     console.log('span click');
