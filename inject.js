@@ -7,7 +7,7 @@ $(document).ready(function() {
   $('span.ui-icon.ui-icon-triangle-1-s').mousedown(function(){
     console.log('span click');
     var arrow = $(this).parent().prev().first();
-    console.log(arrow);
+    console.log('Arrow '+arrow);
   });
   $('span').mousedown(function(){
     console.log(this);
