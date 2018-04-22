@@ -4,4 +4,8 @@ $(document).ready(function() {
     var rButton = $(this).parents('div.ui-radiobutton').get(0);
     console.log(rButton.id);
   });
+  $('span.ui-icon.ui-icon-triangle-1-s').mousedown(function(){
+    var arrow = $(this).parent().prev().first();
+    console.log(arrow);
+  });
 });
