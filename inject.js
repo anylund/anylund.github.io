@@ -4,13 +4,10 @@ $(document).ready(function() {
     var rButton = $(this).parents('div.ui-radiobutton').get(0);
     console.log(rButton.id);
   });
-  $('span.ui-icon.ui-icon-triangle-1-s').mousedown(function(){
+  $('span.ui-icon-triangle-1-s').mousedown(function(){
     console.log('span click');
     var arrow = $(this).parent().prev().first();
-    console.log('Arrow '+arrow);
+    console.log('Arrow '+arrow.id);
   });
-  $('span').mousedown(function(){
-    console.log(this);
-    console.log($(this));
-    });
+
 });
