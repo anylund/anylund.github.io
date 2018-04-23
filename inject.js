@@ -10,24 +10,17 @@ $(document).ready(function() {
       arrow = arrow.get(0);
       console.log('DropdownB '+arrow.id);
     }
-    $(this).remove();
   });
   $('ul.ui-selectcheckboxmenu-multiple-container,div.ui-selectcheckboxmenu-trigger').mousedown(function(){
     var rArrow = $(this).closest('div[id*=tat]').get(0);
     console.log('Selection '+rArrow.id);
-    $(this).remove();
-    console.log('After');
-    console.log($(this));
   });
   
-  $('span.ui-radiobutton-icon').mousedown(function(){
-    console.log($(this));
-    var rButton = $(this).closest('div[id*=tat]').get(0);
+  $('span.ui-radiobutton-icon').mousedown(function(e){
+    console.log(e);
+    var rButton = e.closest('div[id*=tat]').get(0);
     console.log('Radiobutton '+rButton.id);
-    $(this).remove();
-    $(this).empty();
-    console.log('After');
-    console.log($(this));
+
   });
   $('button,span.ui-button-text').mousedown(function(){
     if(this.id) {
