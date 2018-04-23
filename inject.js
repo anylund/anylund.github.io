@@ -1,27 +1,28 @@
 $(document).ready(function() {
-  $('label,input').mousedown(function(){console.log(this.id)});
-  $('div.ui-radiobutton span').mousedown(function(){
-    var rButton = $(this).closest('div[id*=tat]').get(0);
-    console.log('rButton ');
-    console.log(rButton.id);
-
-    if(rButton) {
-      console.log('NO ID');
-      //var someID = rButton.parents('#id').get(0).id;
-      //console.log('someID '+someID);
-    }
-  });
+  $('label,input,textarea').mousedown(function(){console.log('Element '+this.id)});
   $('span.ui-icon-triangle-1-s').mousedown(function(){
     console.log('span click');
     var arrow = $(this).parent().prev().first();
-    console.log(arrow);
     if(arrow.id) {
-      console.log('Arrow '+arrow.id);
+      console.log('Dropdown '+arrow.id);
     } else {
       //koulutus
-      console.log(arrow.get(0));
       arrow = arrow.get(0);
-      console.log(arrow.id);
+      console.log('DropdownB '+arrow.id);
+    }
+  });
+  $('ul.ui-selectcheckboxmenu-multiple-container,div.ui-selectcheckboxmenu-trigger').mousedown(function(){
+    var rArrow = $(this).closest('div[id*=tat]').get(0);
+    console.log('Selection '+rArrow.id);
+  });
+  
+  $('div.ui-radiobutton span').mousedown(function(){
+    var rButton = $(this).closest('div[id*=tat]').get(0);
+    
+    if(!rButton) {
+      console.log('Radiobutton '+rButton.id);
+    } else {
+      console.log('NO ID');
     }
   });
   $('button,span.ui-button-text').mousedown(function(){
@@ -32,9 +33,9 @@ $(document).ready(function() {
       console.log('Button '+ btn);
     }
   });
-  $('ul.ui-selectcheckboxmenu-multiple-container,div.ui-selectcheckboxmenu-trigger').mousedown(function(){
-    var rArrow = $(this).closest('div[id*=tat]').get(0);
-    console.log(rArrow.id);
+  $('span.ui-chkbox-icon').mousedown(function(){
+    var tableId = $(this).closest('table[id*=tat]').get(0);
+    console.log('Table '+ tableId);
   });
 //Errors
   var errorLines = document.querySelectorAll('div.ui-messages-error > ul li');
