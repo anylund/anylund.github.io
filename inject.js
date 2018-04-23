@@ -19,7 +19,9 @@ $(document).ready(function() {
       console.log('Arrow '+arrow.id);
     } else {
       //koulutus
-      console.log(arrow.get(0).id);
+      console.log(arrow.get(0));
+      arrow = arrow.get(0);
+      console.log(arrow.id);
     }
   });
   $(button,span.ui-button-text).mousedown(function(){
