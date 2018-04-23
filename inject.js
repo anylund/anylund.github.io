@@ -1,15 +1,13 @@
 $(document).ready(function() {
+  var fired = false;
   $('label,input,textarea').mousedown(function(){console.log('Element '+this.id)});
   $('span.ui-icon-triangle-1-s').mousedown(function(e){
-    console.log('span click');
-    var arrow = e.target.parent().prev().first();
-    if(arrow.id) {
-      console.log('Dropdown '+arrow.id);
-    } else {
-      //koulutus
-      arrow = arrow.get(0);
-      console.log('DropdownB '+arrow.id);
+    var target = e.target;
+    while(!target.id){
+      target = target.parentNode;
     }
+    console.log(target.id);
+    fired = true;
   });
   $('ul.ui-selectcheckboxmenu-multiple-container,div.ui-selectcheckboxmenu-trigger').mousedown(function(e){
     var rArrow = e.target.closest('div[id*=tat]');
@@ -22,11 +20,11 @@ $(document).ready(function() {
 
   });
   $('button,span.ui-button-text').mousedown(function(e){
-    if(e.target.id) {
+    if(!fired) {
       console.log(e.target.id);
     } else {
-      var btn = e.target.parent();
-      console.log('Button '+ btn.id);
+      //var btn = e.target.parent;
+      console.log('Button ');
     }
   });
   $('span.ui-chkbox-icon').mousedown(function(e){
