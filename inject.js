@@ -24,7 +24,7 @@ $(document).ready(function() {
       console.log(arrow.id);
     }
   });
-  $(button,span.ui-button-text).mousedown(function(){
+  $('button,span.ui-button-text').mousedown(function(){
     if(this.id) {
       console.log(this.id);
     } else {
