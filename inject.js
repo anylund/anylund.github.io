@@ -32,6 +32,10 @@ $(document).ready(function() {
       console.log('Button '+ btn);
     }
   });
+  $('ul.ui-selectcheckboxmenu-multiple-container,div.ui-selectcheckboxmenu-trigger').mousedown(function(){
+    var rArrow = $(this).closest('div[id*=tat]').get(0);
+    console.log(rArrow.id);
+  });
 //Errors
   var errorLines = document.querySelectorAll('div.ui-messages-error > ul li');
   for(var x=0;x<errorLines.length;x++) {
