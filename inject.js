@@ -33,7 +33,7 @@ $(document).ready(function() {
 //Errors
   var errorLines = document.querySelectorAll('div.ui-messages-error > ul li');
   for(var x=0;x<errorLines.length;x++) {
-    console.log(errorLines[x].innerText;);
+    console.log(errorLines[x].innerText);
     //suorita piwik-koodi error teksti:errorLines[x].innertext;
   }
 });
