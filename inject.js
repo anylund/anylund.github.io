@@ -16,14 +16,9 @@ $(document).ready(function() {
     console.log('Selection '+rArrow.id);
   });
   
-  $('div.ui-radiobutton span').mousedown(function(){
+  $('span.ui-radiobutton-icon').mousedown(function(){
     var rButton = $(this).closest('div[id*=tat]').get(0);
-    
-    if(!rButton) {
-      console.log('Radiobutton '+rButton.id);
-    } else {
-      console.log('NO ID');
-    }
+    console.log('Radiobutton '+rButton.id);
   });
   $('button,span.ui-button-text').mousedown(function(){
     if(this.id) {
