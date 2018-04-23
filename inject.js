@@ -15,7 +15,25 @@ $(document).ready(function() {
     console.log('span click');
     var arrow = $(this).parent().prev().first();
     console.log(arrow);
-    console.log('Arrow '+arrow.id);
+    if(arrow.id) {
+      console.log('Arrow '+arrow.id);
+    } else {
+      //koulutus
+      console.log(arrow.get(0).id);
+    }
   });
-
+  $(button,span.ui-button-text).mousedown(function(){
+    if(this.id) {
+      console.log(this.id);
+    } else {
+      var btn = $(this).parent();
+      console.log('Button '+ btn);
+    }
+  });
+//Errors
+  var errorLines = document.querySelectorAll('div.ui-messages-error > ul li');
+  for(var x=0;x<errorLines.length;x++) {
+    console.log(errorLines[x].innerText;);
+    //suorita piwik-koodi error teksti:errorLines[x].innertext;
+  }
 });
