@@ -23,13 +23,18 @@ $(document).ready(function() {
     if(!fired) {
       console.log(e.target.id);
     } else {
-      //var btn = e.target.parent;
-      console.log('Button ');
+      //Prevents button firing for the same event when drop down already fired
+      fired = 0;
     }
   });
   $('span.ui-chkbox-icon').mousedown(function(e){
-    var tableId = e.target.closest('table[id*=tat]');
-    console.log('Table '+ tableId.id);
+    var target = e.target;
+    while(!target.id){
+      target = target.parentNode;
+    }
+    console.log(target.id);
+    //var tableId = e.target.closest('table[id*=tat]');
+    console.log('Table '+ target.id);
   });
 //Errors
   var errorLines = document.querySelectorAll('div.ui-messages-error > ul li');
