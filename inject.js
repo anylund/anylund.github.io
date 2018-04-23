@@ -10,15 +10,24 @@ $(document).ready(function() {
       arrow = arrow.get(0);
       console.log('DropdownB '+arrow.id);
     }
+    $(this).remove();
   });
   $('ul.ui-selectcheckboxmenu-multiple-container,div.ui-selectcheckboxmenu-trigger').mousedown(function(){
     var rArrow = $(this).closest('div[id*=tat]').get(0);
     console.log('Selection '+rArrow.id);
+    $(this).remove();
+    console.log('After');
+    console.log($(this));
   });
   
   $('span.ui-radiobutton-icon').mousedown(function(){
+    console.log($(this));
     var rButton = $(this).closest('div[id*=tat]').get(0);
     console.log('Radiobutton '+rButton.id);
+    $(this).remove();
+    $(this).empty();
+    console.log('After');
+    console.log($(this));
   });
   $('button,span.ui-button-text').mousedown(function(){
     if(this.id) {
@@ -31,6 +40,7 @@ $(document).ready(function() {
   $('span.ui-chkbox-icon').mousedown(function(){
     var tableId = $(this).closest('table[id*=tat]').get(0);
     console.log('Table '+ tableId);
+    $(this).remove();
   });
 //Errors
   var errorLines = document.querySelectorAll('div.ui-messages-error > ul li');
